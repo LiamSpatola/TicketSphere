@@ -1,6 +1,6 @@
 <?php
     // Getting the database credentials
-    require("util/settings.php");
+    require("utils/settings.php");
 
     // Initiating a connection to the database
     $conn = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);

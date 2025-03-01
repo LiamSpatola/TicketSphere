@@ -19,7 +19,7 @@
         // Trying to register the user and handling duplicate usernames
         try {
             // Building the database query and connecting to the database
-            require("util/dbConnect.php");
+            require("utils/dbConnect.php");
             $query = $conn->prepare("INSERT INTO users (username, password, firstName, lastName, email, isAdmin) VALUES (?, ?, ?, ?, ?, 0)");
             $query->bind_param("sssss", $username, $hashedPassword, $firstName, $lastName, $email);
 
