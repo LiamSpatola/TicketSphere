@@ -17,6 +17,9 @@
                 </li>
             <?php else: ?>
                 <li class="navbar-item">
+                    <a href="myTickets.php" class="nav-link text-light">My Tickets</a>
+                </li>
+                <li class="navbar-item">
                     <a href="store.php" class="nav-link text-light">Store</a>
                 </li>
                 <li class="navbar-item">
