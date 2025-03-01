@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     require("settings.php");
 
     $time = $_SERVER["REQUEST_TIME"]; // Getting the current time
@@ -8,7 +10,7 @@
         $last = $_SESSION["LAST_ACTIVITY"]; // Getting the time of the last activity
         $duration = $time - $last; // Seeing how long it has been since the last activity
 
-        if ($duration > TIMEOUT_DURATION) {
+        if ($duration > Settings::TIMEOUT_DURATION) {
             // Logging the user out if they have timed out
             header("Location: login.php");
             exit;
