@@ -59,13 +59,16 @@
                 </tbody>
             </table>
         </div>
+        <div class="d-flex justify-content-center">
+            <a href="store.php" class="btn btn-primary m-3">Continue Shopping</a>
+            <a href="purchase.php" class="btn btn-primary m-3">Purchase Tickets</a>
+        </div>
     <?php else: ?>
         <!-- If there are no events in the cart, display a message -->
         <p class="text-center">Your cart is empty. Add some events through the store.</p>
+        <div class="d-flex justify-content-center">
+            <a href="store.php" class="btn btn-primary">Continue Shopping</a>
+        </div>
     <?php endif; ?>
-
-    <div class="d-flex justify-content-center">
-        <a href="store.php" class="btn btn-primary">Continue Shopping</a>
-    </div>
 </body>
 </html>
