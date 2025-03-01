@@ -45,6 +45,14 @@
                                 <p class="card-text"><strong>Admissions Per Ticket:</strong> <?php echo($event["admissionsPerTicket"]); ?></p>
                                 <p class="card-text"><strong>Ticket Sales Open:</strong> <?php echo($event["ticketSaleStartDate"]); ?></p>
                                 <p class="card-text"><strong>Ticket Sales Close:</strong> <?php echo($event["ticketSaleEndDate"]); ?></p>
+
+                                <!-- The add to cart form -->
+                                <form action="addToCart.php" method="POST">
+                                    <input type="hidden" name="eventID" value="<?php echo $event['eventID']; ?>">
+                                    <label for="quantity" class="mr-2"><strong>Quantity:</strong></label>
+                                    <input type="number" name="quantity" min="1" max="<?php echo $event['numberOfTicketsRemaining']; ?>" value="1" required>
+                                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                </form>
                             </div>
                         </div>
                     </div>
