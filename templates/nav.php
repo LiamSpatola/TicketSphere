@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
 
 <nav class="navbar navbar-expand-sm bg-primary">
     <div class="container-fluid">
@@ -8,6 +12,8 @@
                 <?php
                     if (!isset($_SESSION["userID"])) {
                         echo('<a href="login.php" class="nav-link text-light">Login</a>');
+                    } else {
+                        echo('<a href="logout.php" class="nav-link text-light">Logout</a>');
                     }
                 ?>
             </li>
