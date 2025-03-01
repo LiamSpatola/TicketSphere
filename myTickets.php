@@ -10,7 +10,7 @@
 
     // Fetch tickets for the logged-in user
     $query = $conn->prepare("
-        SELECT t.ticketID, e.name, e.venue, e.date 
+        SELECT t.ticketID, t.admissionsLeft, e.name, e.venue, e.date 
         FROM tickets AS t
         INNER JOIN events AS e ON t.eventID = e.eventID
         WHERE t.userID = ?
@@ -40,6 +40,7 @@
                             <th>Event</th>
                             <th>Venue</th>
                             <th>Date</th>
+                            <th>Admissions Left</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -49,6 +50,7 @@
                                 <td><?php echo($ticket["name"]); ?></td>
                                 <td><?php echo($ticket["venue"]); ?></td>
                                 <td><?php echo($ticket["date"]); ?></td>
+                                <td><?php echo($ticket["admissionsLeft"]); ?></td>
                                 <td>
                                     <a href="ticket.php?id=<?php echo $ticket['ticketID']; ?>" class="btn text-primary btn-link">View Ticket</a>
                                 </td>
