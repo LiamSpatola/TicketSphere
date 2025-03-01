@@ -17,6 +17,12 @@
                 </li>
             <?php else: ?>
                 <li class="navbar-item">
+                    <a href="store.php" class="nav-link text-light">Store</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="cart.php" class="nav-link text-light">Cart</a>
+                </li>
+                <li class="navbar-item">
                     <a href="logout.php" class="nav-link text-light">Logout</a>
                 </li>
             <?php endif; ?>
