@@ -1,9 +1,9 @@
 <?php
     // Getting the database credentials
-    require("settings.php");
+    require("util/settings.php");
 
     // Initiating a connection to the database
-    $conn = new mysqli($DB_SERVER, $DB_USER, $DB_PASSWORD, $DB_NAME);
+    $conn = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
     if ($conn->connect_error) {
         // Handling connection errors
