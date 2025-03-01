@@ -17,32 +17,33 @@
 
         // Building the database query and connecting to the database
         require("util/dbConnect.php");
-        $query = $conn->prepare("SELECT u.userID, u.isAdmin FROM users AS u WHERE u.username = ? AND u.password = ?");
-        $query->bind_param("ss", $username, $password);
+        $query = $conn->prepare("SELECT u.userID, u.password, u.isAdmin FROM users AS u WHERE u.username = ?");
+        $query->bind_param("s", $username);
 
         // Running the query and handling the results
         $query->execute();
-        $result = $query->get_result();
+        $query->store_result();
 
 
-        if ($result->num_rows > 0) {
+        if ($query->num_rows > 0) {
             // Handling cases where a user exists
-            $row = $result->fetch_assoc();
+            $query->bind_result($userID, $hashedPassword, $isAdmin);
+            $query->fetch();
 
-            $userID = $row["userID"];
-            $isAdmin = $row["isAdmin"];
+            // Verifying the password
+            if (password_verify($password, $hashedPassword)) {
+                // Handling cases where the password is correct
+                $_SESSION["userID"] = $userID;
+                $_SESSION["isAdmin"] = ($isAdmin == 1) ? true : false;
 
-            if ($isAdmin == 1) {
-                $_SESSION["isAdmin"] = true;
+                // Redirecting to the home page
+                header("Location: index.php");
+                exit();
             } else {
-                $_SESSION["isAdmin"] = false;
+                // Handling cases where the password is incorrect
+                $msg = "Incorrect password or username. Please try again.";
+                $msg_visibility = "visible";
             }
-
-            $_SESSION["userID"] = $userID;
-
-            // Redirecting the user to the home page
-            header("Location: index.php");
-            exit;
         } else {
             // Handling cases where no user exists
             $msg = "Incorrect password or username. Please try again.";

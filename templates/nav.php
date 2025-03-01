@@ -8,15 +8,14 @@
     <div class="container-fluid">
         <a href="index.php" class="navbar-brand text-light">TicketSphere</a>
         <ul class="navbar-nav">
-            <li class="navbar-item">
                 <?php
                     if (!isset($_SESSION["userID"])) {
-                        echo('<a href="login.php" class="nav-link text-light">Login</a>');
+                        echo('<li class="navbar-item"><a href="login.php" class="nav-link text-light">Login</a></li>');
+                        echo('<li class="navbar-item"><a href="register.php" class="nav-link text-light">Register</a></li>');
                     } else {
-                        echo('<a href="logout.php" class="nav-link text-light">Logout</a>');
+                        echo('<li class="navbar-item"><a href="logout.php" class="nav-link text-light">Logout</a></li>');
                     }
                 ?>
-            </li>
         </ul>
     </div>
 </nav>
