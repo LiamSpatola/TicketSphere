@@ -47,13 +47,23 @@
                     <tbody>
                         <?php while ($ticket = $result->fetch_assoc()): ?>
                             <tr>
-                                <td><?php echo $ticket["name"]; ?></td>
-                                <td><?php echo $ticket["venue"]; ?></td>
-                                <td><?php echo $ticket["date"]; ?></td>
-                                <td><?php echo $ticket["admissionsLeft"]; ?></td>
-                                <td>
-                                    <a href="ticket.php?id=<?php echo $ticket['ticketID']; ?>" class="btn text-primary btn-link">View Ticket</a>
-                                </td>
+                                <?php if ($ticket["admissionsLeft"] > 0): ?>
+                                    <td><?php echo $ticket["name"]; ?></td>
+                                    <td><?php echo $ticket["venue"]; ?></td>
+                                    <td><?php echo $ticket["date"]; ?></td>
+                                    <td><?php echo $ticket["admissionsLeft"]; ?></td>
+                                    <td>
+                                        <a href="ticket.php?id=<?php echo $ticket['ticketID']; ?>" class="btn text-primary btn-link">View Ticket</a>
+                                    </td>
+                                <?php else: ?>
+                                    <td class="text-muted"><?php echo $ticket["name"]; ?></td>
+                                    <td class="text-muted"><?php echo $ticket["venue"]; ?></td>
+                                    <td class="text-muted"><?php echo $ticket["date"]; ?></td>
+                                    <td class="text-muted"><?php echo $ticket["admissionsLeft"]; ?></td>
+                                    <td class="text-muted">
+                                        <a href="ticket.php?id=<?php echo $ticket['ticketID']; ?>" class="btn text-muted btn-link">View Ticket</a>
+                                    </td>
+                                <?php endif; ?>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>

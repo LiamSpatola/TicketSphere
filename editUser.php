@@ -79,7 +79,7 @@
         
         <form name="editUser" action="" method="POST">
             <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo $msg_visibility; ?>;"><?php echo $msg; ?></p>
-            <input type="hidden" name="userID" value="<?php echo $userID); ?>">
+            <input type="hidden" name="userID" value="<?php echo $userID; ?>">
             <div class="mb-3 mt-3">
                 <label for="username">First Name:</label>
                 <input type="text" class="form-control" name="firstName" value="<?php echo $result["firstName"]; ?>" required>

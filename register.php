@@ -77,7 +77,7 @@
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>
 </body>
