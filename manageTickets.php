@@ -5,7 +5,7 @@
 
     // Fetching all the tickets from the database
     $query = "
-        SELECT t.ticketID, t.purchaseDate, t.admissionsLeft, e.name, e.date, e.venue, u.firstName, u.lastName
+        SELECT t.ticketID, t.purchaseDate, t.admissionsLeft, e.eventID, e.name, e.date, e.venue, u.firstName, u.lastName
         FROM tickets AS t
         INNER JOIN events AS e ON t.eventID = e.eventID
         INNER JOIN users AS u ON t.userID = u.userID
@@ -51,8 +51,10 @@
                             <td><?php echo($ticket["venue"]); ?></td>
                             <td><?php echo($ticket["admissionsLeft"]); ?></td>
                             <td>
+                                <a href="editTicket.php?id=<?php echo $ticket['ticketID']; ?>" class="btn text-primary btn-link">Edit</a>
                                 <form name="deleteTicket" action="deleteTicket.php" method="POST">
                                     <input type="hidden" name="ticketID" value="<?php echo $ticket["ticketID"]; ?>">
+                                    <input type="hidden" name="eventID" value="<?php echo $ticket["eventID"]; ?>">
                                     <button type="submit" class="btn btn-link text-danger p-0">Delete</button>
                                 </form>
                             </td>

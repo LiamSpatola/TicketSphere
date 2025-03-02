@@ -67,7 +67,7 @@
 <html lang="en">
 <head>
     <?php require("templates/head.php"); ?>
-    <title>TicketSphere - Edit User</title>
+    <title>TicketSphere - Edit Event</title>
 </head>
 <body>
     <?php require("templates/nav.php"); ?>
@@ -104,11 +104,11 @@
             </div>
             <div class="mb-3 mt-3">
                 <label for="numberOfTicketsRemaining">Number of Tickets Remaining:</label>
-                <input type="number" class="form-control" name="numberOfTicketsRemaining" value="<?php echo($result["numberOfTicketsRemaining"]); ?>" required>
+                <input type="number" class="form-control" name="numberOfTicketsRemaining" value="<?php echo($result["numberOfTicketsRemaining"]); ?>" min="1" required>
             </div>
             <div class="mb-3 mt-3">
                 <label for="admissionsPerTicket">Admissions Per Ticket:</label>
-                <input type="number" class="form-control" name="admissionsPerTicket" value="<?php echo($result["admissionsPerTicket"]); ?>" required>
+                <input type="number" class="form-control" name="admissionsPerTicket" value="<?php echo($result["admissionsPerTicket"]); ?>" min="1" required>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
