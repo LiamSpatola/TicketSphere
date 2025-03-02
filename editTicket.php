@@ -70,7 +70,7 @@
                 <label for="admissionsLeft">Admissions Remaining:</label>
                 <input type="number" class="form-control" name="admissionsLeft" value="<?php echo($result["admissionsLeft"]); ?>" min="0" required>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Update</button><a href="manageTickets.php" class="btn btn-danger ms-3">Cancel</a>
         </form>
     </div>
 </body>

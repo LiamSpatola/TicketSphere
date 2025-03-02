@@ -110,7 +110,7 @@
                 <label for="admissionsPerTicket">Admissions Per Ticket:</label>
                 <input type="number" class="form-control" name="admissionsPerTicket" value="<?php echo($result["admissionsPerTicket"]); ?>" min="1" required>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Update</button><a href="manageEvents.php" class="btn btn-danger ms-3">Cancel</a>
         </form>
     </div>
 </body>

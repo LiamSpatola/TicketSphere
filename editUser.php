@@ -104,7 +104,7 @@
                 <label for="adminStatus" class="form-check-label">Admin:</label>
                 <input type="checkbox" class="form-check-input" name="adminStatus" <?php echo($result["isAdmin"] == 1 ? "checked" : ""); ?>>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Update</button><a href="manageUsers.php" class="btn btn-danger ms-3">Cancel</a>
         </form>
     </div>
 </body>
