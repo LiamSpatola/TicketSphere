@@ -63,7 +63,7 @@
     <div class="container mt-3 bg-light p-5 border rounded">
         <h2 class="text-center">Edit Ticket</h2>
         
-        <form name="editUser" action="" method="POST">
+        <form name="editTicket" action="" method="POST">
             <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo($msg_visibility); ?>;"><?php echo($msg); ?></p>
             <input type="hidden" name="ticketID" value="<?php echo($ticketID); ?>">
             <div class="mb-3 mt-3">
