@@ -137,7 +137,15 @@ touch settings.php # On windows, use 'type nul > settings.php'
 | TIMEOUT_DURATION | The amount of time, in seconds, that the user is allowed to be inactive for before being logged out. |
 | TIMEZONE | The timezone for the application. |
 
-6. Start your web server with PHP and navigate to `localhost`
+6. Create an admin user (for the website) with this SQL command:
+```sql
+INSERT INTO users AS u
+(u.username, u.password, u.firstName, u.lastName, u.email, u.isAdmin)
+VALUES ('admin', 'admin', 'Admin', 'User', 'admin@admin.com', 1);
+```
+**Ensure you set `isAdmin` to 1 to make the user an admin user. Setting it to anything else will make the user a regular user.**
+
+7. Start your web server with PHP and navigate to [localhost/login.php](localhost/login.php). Login using the user created in step 6. You can now use the website and create events. Register as a regular user to purchase tickets by heading to [localhost/register.php](localhost/register.php).
 
 ## Contributing
 Please feel free to contribute to this repository.
