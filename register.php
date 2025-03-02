@@ -1,5 +1,5 @@
 <?php
-    require "utils/dbConnect.php");
+    require "utils/dbConnect.php";
 
     $method = $_SERVER["REQUEST_METHOD"];
 
