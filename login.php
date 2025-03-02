@@ -1,4 +1,6 @@
 <?php
+    require("utils/dbConnect.php");
+
     // Initializing session memory and clearing it
     session_start();
     session_destroy();
@@ -16,7 +18,6 @@
         $password = $_POST["password"];
 
         // Building the database query and connecting to the database
-        require("utils/dbConnect.php");
         $query = $conn->prepare("SELECT u.userID, u.password, u.isAdmin FROM users AS u WHERE u.username = ?");
         $query->bind_param("s", $username);
 

@@ -1,4 +1,7 @@
 <?php
+    require("utils/sessionCheck.php");
+    require("utils/dbConnect.php");
+
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
@@ -10,7 +13,6 @@
     $currentDate = date('Y-m-d H:i:s');
 
     // Fetching all the events from the database which are currently open
-    require("utils/dbConnect.php");
     $query = $conn->prepare("SELECT * FROM events AS e WHERE e.ticketSaleStartDate <= ? AND e.ticketSaleEndDate >= ? AND e.numberOfTicketsRemaining >= 1 ORDER BY e.date ASC");
     $query->bind_param("ss", $currentDate, $currentDate);
     $query->execute();
@@ -22,7 +24,6 @@
 <html lang="en">
 <head>
     <?php require("templates/head.php"); ?>
-    <?php require("utils/sessionCheck.php"); ?>
     <title>TicketSphere - Store</title>
 </head>
 <body>

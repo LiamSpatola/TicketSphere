@@ -1,4 +1,7 @@
 <?php
+    require("utils/sessionCheck.php");
+    require("utils/dbConnect.php");
+
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
@@ -10,7 +13,6 @@
         $cartEmpty = false;
 
         // Fetching the events from the database
-        require("utils/dbConnect.php");
         $eventIDs = implode(",", array_keys($_SESSION["cart"]));
         $query = "SELECT e.eventID, e.name, e.venue, e.date FROM events AS e WHERE e.eventID IN ($eventIDs)";
         $result = $conn->query($query);
@@ -21,7 +23,6 @@
 <html lang="en">
 <head>
     <?php require("templates/head.php"); ?>
-    <?php require("utils/sessionCheck.php"); ?>
     <title>TicketSphere - Cart</title>
 </head>
 <body>

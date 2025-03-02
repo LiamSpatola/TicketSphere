@@ -3,7 +3,7 @@
 <head>
     <?php require("templates/head.php"); ?>
     <?php require("utils/sessionCheck.php"); ?>
-    <title>Document</title>
+    <title>TicketSphere - Purchase Successful</title>
 </head>
 <body>
     <?php require("templates/nav.php"); ?>

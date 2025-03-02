@@ -1,5 +1,6 @@
 <?php
     require("utils/sessionCheck.php");
+    require("utils/dbConnect.php");
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -13,8 +14,7 @@
         // Getting the user id
         $userID = $_SESSION["userID"];
 
-        // Beginning a transaction and connecting to the database
-        require("utils/dbConnect.php");
+        // Beginning a transaction
         $conn->begin_transaction();
 
         // Adding the tickets to the database
