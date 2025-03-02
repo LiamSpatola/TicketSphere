@@ -1,13 +1,13 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/dbConnect.php";
+    require "utils/settings.php";
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
 
     // Get the current date and time and configure the timezone
-    require("utils/settings.php");
     date_default_timezone_set(Settings::TIMEZONE);
 
     $currentDate = date('Y-m-d H:i:s');
@@ -23,11 +23,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Store</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
     <h1 class="text-center pt-5"><strong>Ticket Store</strong></h1>
 
     <div class="container mt-5">
@@ -38,14 +38,14 @@
                     <div class="col-md-4 mb-4">
                         <div class="card bg-light">
                             <div class="card-body">
-                                <h1 class="card-title"><?php echo($event["name"]); ?></h1>
-                                <p class="card-text"><strong>Description:</strong> <?php echo($event["description"]); ?></p>
-                                <p class="card-text"><strong>Venue:</strong> <?php echo($event["venue"]); ?></p>
-                                <p class="card-text"><strong>Date:</strong> <?php echo($event["date"]); ?></p>
-                                <p class="card-text"><strong>Tickets Remaining:</strong> <?php echo($event["numberOfTicketsRemaining"]); ?></p>
-                                <p class="card-text"><strong>Admissions Per Ticket:</strong> <?php echo($event["admissionsPerTicket"]); ?></p>
-                                <p class="card-text"><strong>Ticket Sales Open:</strong> <?php echo($event["ticketSaleStartDate"]); ?></p>
-                                <p class="card-text"><strong>Ticket Sales Close:</strong> <?php echo($event["ticketSaleEndDate"]); ?></p>
+                                <h1 class="card-title"><?php echo $event["name"]; ?></h1>
+                                <p class="card-text"><strong>Description:</strong> <?php echo $event["description"]; ?></p>
+                                <p class="card-text"><strong>Venue:</strong> <?php echo $event["venue"]; ?></p>
+                                <p class="card-text"><strong>Date:</strong> <?php echo $event["date"]; ?></p>
+                                <p class="card-text"><strong>Tickets Remaining:</strong> <?php echo $event["numberOfTicketsRemaining"]; ?></p>
+                                <p class="card-text"><strong>Admissions Per Ticket:</strong> <?php echo $event["admissionsPerTicket"]; ?></p>
+                                <p class="card-text"><strong>Ticket Sales Open:</strong> <?php echo $event["ticketSaleStartDate"]; ?></p>
+                                <p class="card-text"><strong>Ticket Sales Close:</strong> <?php echo $event["ticketSaleEndDate"]; ?></p>
 
                                 <!-- The add to cart form -->
                                 <form action="addToCart.php" method="POST">

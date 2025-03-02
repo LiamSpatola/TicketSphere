@@ -1,6 +1,6 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/dbConnect.php";
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -24,11 +24,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - My Tickets</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
     <div class="container mt-5">
         <h1 class="text-center"><strong>My Tickets</strong></h1>
 
@@ -47,10 +47,10 @@
                     <tbody>
                         <?php while ($ticket = $result->fetch_assoc()): ?>
                             <tr>
-                                <td><?php echo($ticket["name"]); ?></td>
-                                <td><?php echo($ticket["venue"]); ?></td>
-                                <td><?php echo($ticket["date"]); ?></td>
-                                <td><?php echo($ticket["admissionsLeft"]); ?></td>
+                                <td><?php echo $ticket["name"]; ?></td>
+                                <td><?php echo $ticket["venue"]; ?></td>
+                                <td><?php echo $ticket["date"]; ?></td>
+                                <td><?php echo $ticket["admissionsLeft"]; ?></td>
                                 <td>
                                     <a href="ticket.php?id=<?php echo $ticket['ticketID']; ?>" class="btn text-primary btn-link">View Ticket</a>
                                 </td>

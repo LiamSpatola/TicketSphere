@@ -1,7 +1,7 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/adminCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/adminCheck.php";
+    require "utils/dbConnect.php";
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -15,11 +15,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Manage Users</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
     <h1 class="text-center pt-5"><strong>Manage Users</strong></h1>
 
     <?php if ($result->num_rows > 0): ?>
@@ -40,16 +40,16 @@
                     <!-- If there are users, loop through them and display them in the table -->
                     <?php while ($user = $result->fetch_assoc()): ?>
                         <tr>
-                            <td><?php echo($user["userID"]); ?></td>
-                            <td><?php echo($user["username"]); ?></td>
-                            <td><?php echo($user["firstName"]); ?></td>
-                            <td><?php echo($user["lastName"]); ?></td>
-                            <td><?php echo($user["email"]); ?></td>
+                            <td><?php echo $user["userID"]; ?></td>
+                            <td><?php echo $user["username"]; ?></td>
+                            <td><?php echo $user["firstName"]; ?></td>
+                            <td><?php echo $user["lastName"]; ?></td>
+                            <td><?php echo $user["email"]; ?></td>
                             <td><?php
                                 if ($user["isAdmin"] == 0) {
-                                    echo("No");
+                                    echo "No";
                                 } else {
-                                    echo("Yes");
+                                    echo "Yes";
                                 }
                             ?></td>
                             <td>

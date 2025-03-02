@@ -1,7 +1,7 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/adminCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/adminCheck.php";
+    require "utils/dbConnect.php";
 
     $method = $_SERVER["REQUEST_METHOD"];
 
@@ -68,33 +68,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Edit User</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
 
     <div class="container mt-3 bg-light p-5 border rounded">
         <h2 class="text-center">Edit User</h2>
         
         <form name="editUser" action="" method="POST">
-            <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo($msg_visibility); ?>;"><?php echo($msg); ?></p>
-            <input type="hidden" name="userID" value="<?php echo($userID); ?>">
+            <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo $msg_visibility; ?>;"><?php echo $msg; ?></p>
+            <input type="hidden" name="userID" value="<?php echo $userID); ?>">
             <div class="mb-3 mt-3">
                 <label for="username">First Name:</label>
-                <input type="text" class="form-control" name="firstName" value="<?php echo($result["firstName"]); ?>" required>
+                <input type="text" class="form-control" name="firstName" value="<?php echo $result["firstName"]; ?>" required>
             </div>
             <div class="mb-3 mt-3">
                 <label for="username">Last Name:</label>
-                <input type="text" class="form-control" name="lastName" value="<?php echo($result["lastName"]); ?>" required>
+                <input type="text" class="form-control" name="lastName" value="<?php echo $result["lastName"]; ?>" required>
             </div>
             <div class="mb-3 mt-3">
                 <label for="username">Email:</label>
-                <input type="email" class="form-control" name="email" value="<?php echo($result["email"]); ?>" required>
+                <input type="email" class="form-control" name="email" value="<?php echo $result["email"]; ?>" required>
             </div>
             <div class="mb-3 mt-3">
                 <label for="username">Username:</label>
-                <input type="text" class="form-control" name="username" value="<?php echo($result["username"]); ?>" required>
+                <input type="text" class="form-control" name="username" value="<?php echo $result["username"]; ?>" required>
             </div>
             <div class="mb-3">
                 <label for="password">Password:</label>
@@ -102,7 +102,7 @@
             </div>
             <div class="mb-3">
                 <label for="adminStatus" class="form-check-label">Admin:</label>
-                <input type="checkbox" class="form-check-input" name="adminStatus" <?php echo($result["isAdmin"] == 1 ? "checked" : ""); ?>>
+                <input type="checkbox" class="form-check-input" name="adminStatus" <?php echo $result["isAdmin"] == 1 ? "checked" : ""; ?>>
             </div>
             <button type="submit" class="btn btn-primary">Update</button><a href="manageUsers.php" class="btn btn-danger ms-3">Cancel</a>
         </form>

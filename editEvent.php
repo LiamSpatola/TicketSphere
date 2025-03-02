@@ -1,7 +1,7 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/adminCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/adminCheck.php";
+    require "utils/dbConnect.php";
 
     $method = $_SERVER["REQUEST_METHOD"];
 
@@ -66,29 +66,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Edit Event</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
 
     <div class="container mt-3 bg-light p-5 border rounded">
         <h2 class="text-center">Edit Event</h2>
         
         <form name="editEvent" action="" method="POST">
-            <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo($msg_visibility); ?>;"><?php echo($msg); ?></p>
-            <input type="hidden" name="eventID" value="<?php echo($eventID); ?>">
+            <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo $msg_visibility; ?>;"><?php echo $msg; ?></p>
+            <input type="hidden" name="eventID" value="<?php echo $eventID; ?>">
             <div class="mb-3 mt-3">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" name="name" value="<?php echo($result["name"]); ?>" required>
+                <input type="text" class="form-control" name="name" value="<?php echo $result["name"]; ?>" required>
             </div>
             <div class="mb-3 mt-3">
                 <label for="description">Description</label>
-                <textarea class="form-control" name="description" rows="3" required><?php echo($result["description"]); ?></textarea>
+                <textarea class="form-control" name="description" rows="3" required><?php echo $result["description"]; ?></textarea>
             </div>
             <div class="mb-3 mt-3">
                 <label for="venue">Venue:</label>
-                <input type="text" class="form-control" name="venue" value="<?php echo($result["venue"]); ?>" required>
+                <input type="text" class="form-control" name="venue" value="<?php echo $result["venue"]; ?>" required>
             </div>
             <div class="mb-3 mt-3">
                 <label for="date">Date:</label>
@@ -104,11 +104,11 @@
             </div>
             <div class="mb-3 mt-3">
                 <label for="numberOfTicketsRemaining">Number of Tickets Remaining:</label>
-                <input type="number" class="form-control" name="numberOfTicketsRemaining" value="<?php echo($result["numberOfTicketsRemaining"]); ?>" min="1" required>
+                <input type="number" class="form-control" name="numberOfTicketsRemaining" value="<?php echo $result["numberOfTicketsRemaining"]; ?>" min="1" required>
             </div>
             <div class="mb-3 mt-3">
                 <label for="admissionsPerTicket">Admissions Per Ticket:</label>
-                <input type="number" class="form-control" name="admissionsPerTicket" value="<?php echo($result["admissionsPerTicket"]); ?>" min="1" required>
+                <input type="number" class="form-control" name="admissionsPerTicket" value="<?php echo $result["admissionsPerTicket"]; ?>" min="1" required>
             </div>
             <button type="submit" class="btn btn-primary">Update</button><a href="manageEvents.php" class="btn btn-danger ms-3">Cancel</a>
         </form>

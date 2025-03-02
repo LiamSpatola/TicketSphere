@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Home</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
 
     <h1 class="text-center pt-5"><strong>Welcome.</strong></h1>
     <p class="text-center pb-5">Welcome to TicketSphere, the home of ticketing!</p>

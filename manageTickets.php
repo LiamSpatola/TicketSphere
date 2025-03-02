@@ -1,7 +1,7 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/adminCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/adminCheck.php";
+    require "utils/dbConnect.php";
 
     // Fetching all the tickets from the database
     $query = "
@@ -17,11 +17,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Manage Tickets</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
     <h1 class="text-center pt-5"><strong>Manage Tickets</strong></h1>
 
     <?php if ($result->num_rows > 0): ?>
@@ -43,13 +43,13 @@
                     <!-- If there are tickets, loop through them and display them in the table -->
                     <?php while ($ticket = $result->fetch_assoc()): ?>
                         <tr>
-                            <td><?php echo($ticket["ticketID"]); ?></td>
-                            <td><?php echo($ticket["purchaseDate"]); ?></td>
-                            <td><?php echo($ticket["firstName"]." ".$ticket["lastName"]); ?></td>
-                            <td><?php echo($ticket["name"]); ?></td>
-                            <td><?php echo($ticket["date"]); ?></td>
-                            <td><?php echo($ticket["venue"]); ?></td>
-                            <td><?php echo($ticket["admissionsLeft"]); ?></td>
+                            <td><?php echo $ticket["ticketID"]; ?></td>
+                            <td><?php echo $ticket["purchaseDate"]; ?></td>
+                            <td><?php echo $ticket["firstName"]." ".$ticket["lastName"]; ?></td>
+                            <td><?php echo $ticket["name"]; ?></td>
+                            <td><?php echo $ticket["date"]; ?></td>
+                            <td><?php echo $ticket["venue"]; ?></td>
+                            <td><?php echo $ticket["admissionsLeft"]; ?></td>
                             <td>
                                 <a href="editTicket.php?id=<?php echo $ticket['ticketID']; ?>" class="btn text-primary btn-link">Edit</a>
                                 <form name="deleteTicket" action="deleteTicket.php" method="POST">

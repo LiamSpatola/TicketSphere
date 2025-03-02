@@ -1,6 +1,6 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/dbConnect.php";
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();

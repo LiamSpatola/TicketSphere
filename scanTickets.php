@@ -1,7 +1,7 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/adminCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/adminCheck.php";
+    require "utils/dbConnect.php";
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -44,16 +44,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Scan Tickets</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
     <h1 class="text-center pt-5">Scan Tickets</h1>
 
     <div class="container mt-3 bg-light p-5 border rounded"> 
         <form name="scanTickets" action="" method="POST">
-            <?php echo($msg); ?>
+            <?php echo $msg; ?>
             <div class="mb-3 mt-3">
                 <label for="username">Ticket ID:</label>
                 <input type="text" class="form-control" name="ticketID" required>

@@ -1,6 +1,6 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/dbConnect.php";
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -22,11 +22,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Cart</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
     <h1 class="text-center pt-5"><strong>Cart</strong></h1>
 
     <?php if (!$cartEmpty): ?>
@@ -45,10 +45,10 @@
                     <!-- If there are events in the cart, loop through them and display them in the table -->
                     <?php while ($event = $result->fetch_assoc()): ?>
                         <tr>
-                            <td><?php echo($event["name"]); ?></td>
-                            <td><?php echo($event["venue"]); ?></td>
-                            <td><?php echo($event["date"]); ?></td>
-                            <td><?php echo($_SESSION["cart"][$event["eventID"]]["quantity"]); ?></td>
+                            <td><?php echo $event["name"]; ?></td>
+                            <td><?php echo $event["venue"]; ?></td>
+                            <td><?php echo $event["date"]; ?></td>
+                            <td><?php echo $_SESSION["cart"][$event["eventID"]]["quantity"]; ?></td>
                             <td>
                                 <form name="removeFromCart" action="removeFromCart.php" method="POST">
                                     <input type="hidden" name="eventID" value="<?php echo $event["eventID"]; ?>">

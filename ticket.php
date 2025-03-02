@@ -1,6 +1,6 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/dbConnect.php";
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -43,23 +43,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - View Ticket</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
     <h1 class="text-center pt-5"><strong>View Ticket</strong></h1>
     
     <div class="text-center mt-3">
-        <h2><strong>Event: </strong><?php echo($ticket["eventName"]); ?></h2>
-        <p><strong>Description: </strong><?php echo($ticket["description"]); ?></p>
-        <p><strong>Venue: </strong><?php echo($ticket["venue"]); ?></p>
-        <p><strong>Event Date: </strong><?php echo($ticket["date"]); ?></p>
-        <p><strong>Ticket Holder: </strong><?php echo($ticket["firstName"]." ".$ticket["lastName"]); ?></p>
-        <p><strong>Purchase Date: </strong><?php echo($ticket["purchaseDate"]); ?></p>
-        <p><strong>Admissions Left: </strong><?php echo($ticket["admissionsLeft"]); ?></p>
+        <h2><strong>Event: </strong><?php echo $ticket["eventName"]; ?></h2>
+        <p><strong>Description: </strong><?php echo $ticket["description"]; ?></p>
+        <p><strong>Venue: </strong><?php echo $ticket["venue"]; ?></p>
+        <p><strong>Event Date: </strong><?php echo $ticket["date"]; ?></p>
+        <p><strong>Ticket Holder: </strong><?php echo $ticket["firstName"]." ".$ticket["lastName"]; ?></p>
+        <p><strong>Purchase Date: </strong><?php echo $ticket["purchaseDate"]; ?></p>
+        <p><strong>Admissions Left: </strong><?php echo $ticket["admissionsLeft"]; ?></p>
 
-        <img src="<?php echo($barcodeURL); ?>" alt="Ticket Barcode" class="mt-3">
+        <img src="<?php echo $barcodeURL; ?>" alt="Ticket Barcode" class="mt-3">
         <h4 class="mt-3">Show this ticket at the venue entrance.</h4>
     </div>
 </body>

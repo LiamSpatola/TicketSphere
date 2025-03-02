@@ -1,5 +1,5 @@
 <?php
-    require("settings.php");
+    require "settings.php";
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
@@ -19,8 +19,6 @@
     }
 
     $_SESSION["LAST_ACTIVITY"] = $time; // Updating the time of the last activity
-
-    // echo($_SESSION["userID"]);
 
     if (!isset($_SESSION["userID"])) {
         // Checking if the user is logged in and redirecting them if they are not

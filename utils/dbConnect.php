@@ -1,6 +1,6 @@
 <?php
     // Getting the database credentials
-    require("utils/settings.php");
+    require "utils/settings.php";
 
     // Initiating a connection to the database
     $conn = new mysqli(Settings::DB_SERVER, Settings::DB_USER, Settings::DB_PASSWORD, Settings::DB_NAME);

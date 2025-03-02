@@ -1,7 +1,7 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/adminCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/adminCheck.php";
+    require "utils/dbConnect.php";
 
     $method = $_SERVER["REQUEST_METHOD"];
 
@@ -54,21 +54,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Edit Ticket</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
 
     <div class="container mt-3 bg-light p-5 border rounded">
         <h2 class="text-center">Edit Ticket</h2>
         
         <form name="editTicket" action="" method="POST">
-            <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo($msg_visibility); ?>;"><?php echo($msg); ?></p>
-            <input type="hidden" name="ticketID" value="<?php echo($ticketID); ?>">
+            <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo $msg_visibility; ?>;"><?php echo $msg; ?></p>
+            <input type="hidden" name="ticketID" value="<?php echo $ticketID; ?>">
             <div class="mb-3 mt-3">
                 <label for="admissionsLeft">Admissions Remaining:</label>
-                <input type="number" class="form-control" name="admissionsLeft" value="<?php echo($result["admissionsLeft"]); ?>" min="0" required>
+                <input type="number" class="form-control" name="admissionsLeft" value="<?php echo $result["admissionsLeft"]; ?>" min="0" required>
             </div>
             <button type="submit" class="btn btn-primary">Update</button><a href="manageTickets.php" class="btn btn-danger ms-3">Cancel</a>
         </form>

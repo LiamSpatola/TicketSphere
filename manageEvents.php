@@ -1,7 +1,7 @@
 <?php
-    require("utils/sessionCheck.php");
-    require("utils/adminCheck.php");
-    require("utils/dbConnect.php");
+    require "utils/sessionCheck.php";
+    require "utils/adminCheck.php";
+    require "utils/dbConnect.php";
 
     // Fetching all the events from the database
     $query = "SELECT * FROM events AS e ORDER BY e.date ASC";
@@ -11,11 +11,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Manage Events</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
     <h1 class="text-center pt-5"><strong>Manage Events</strong></h1>
 
     <?php if ($result->num_rows > 0): ?>
@@ -39,15 +39,15 @@
                     <!-- If there are events, loop through them and display them in the table -->
                     <?php while ($event = $result->fetch_assoc()): ?>
                         <tr>
-                            <td><?php echo($event["eventID"]); ?></td>
-                            <td><?php echo($event["name"]); ?></td>
-                            <td><?php echo($event["description"]); ?></td>
-                            <td><?php echo($event["venue"]); ?></td>
-                            <td><?php echo($event["date"]); ?></td>
-                            <td><?php echo($event["ticketSaleStartDate"]); ?></td>
-                            <td><?php echo($event["ticketSaleEndDate"]); ?></td>
-                            <td><?php echo($event["numberOfTicketsRemaining"]); ?></td>
-                            <td><?php echo($event["admissionsPerTicket"]); ?></td>
+                            <td><?php echo $event["eventID"]; ?></td>
+                            <td><?php echo $event["name"]; ?></td>
+                            <td><?php echo $event["description"]; ?></td>
+                            <td><?php echo $event["venue"]; ?></td>
+                            <td><?php echo $event["date"]; ?></td>
+                            <td><?php echo $event["ticketSaleStartDate"]; ?></td>
+                            <td><?php echo $event["ticketSaleEndDate"]; ?></td>
+                            <td><?php echo $event["numberOfTicketsRemaining"]; ?></td>
+                            <td><?php echo $event["admissionsPerTicket"]; ?></td>
                             <td>
                                 <a href="editEvent.php?id=<?php echo $event['eventID']; ?>" class="btn text-primary btn-link">Edit</a>
                                 <form name="deleteEvent" action="deleteEvent.php" method="POST">

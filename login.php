@@ -1,5 +1,5 @@
 <?php
-    require("utils/dbConnect.php");
+    require "utils/dbConnect.php";
 
     // Initializing session memory and clearing it
     session_start();
@@ -56,17 +56,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("templates/head.php"); ?>
+    <?php require "templates/head.php"; ?>
     <title>TicketSphere - Login</title>
 </head>
 <body>
-    <?php require("templates/nav.php"); ?>
+    <?php require "templates/nav.php"; ?>
 
     <div class="container mt-3 bg-light p-5 border rounded">
         <h2 class="text-center">Login</h2>
         
         <form name="login" action="" method="POST">
-            <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo($msg_visibility); ?>;"><?php echo($msg); ?></p>
+            <p class="text-danger bg-danger bg-opacity-10 border border-danger rounded p-2" style="visibility: <?php echo $msg_visibility; ?>;"><?php echo $msg; ?></p>
             <div class="mb-3 mt-3">
                 <label for="username">Username:</label>
                 <input type="text" class="form-control" name="username" required>
