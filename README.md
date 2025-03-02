@@ -151,4 +151,4 @@ VALUES ('admin', 'admin', 'Admin', 'User', 'admin@admin.com', 1);
 Please feel free to contribute to this repository.
 
 ## Licensing
-TicketSphere is licensed under the GNU GPLv3. The full license text is available in the `LICENSE` file [here](https://www.gnu.org/licenses/gpl-3.0.txt). For an explanation of what you can and can't do under this license, see the `LICENSE` file (on GitHub web) or visit [here](https://choosealicense.com/licenses/gpl-3.0/).
+TicketSphere is licensed under the GNU GPLv3. The full license text, as well as an explanation of what you can and can't do under this license, is available in the `LICENSE` file or [here](https://choosealicense.com/licenses/gpl-3.0/).
