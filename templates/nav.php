@@ -39,6 +39,7 @@
                     <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#">Manage</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="manageUsers.php">Users</a></li>
+                        <li><a class="dropdown-item" href="manageEvents.php">Events</a></li>
                     </ul>
                 </li>
                 <li class="navbar-item">

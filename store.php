@@ -11,7 +11,7 @@
 
     // Fetching all the events from the database which are currently open
     require("utils/dbConnect.php");
-    $query = $conn->prepare("SELECT * FROM events AS e WHERE e.ticketSaleStartDate <= ? AND e.ticketSaleEndDate >= ? AND e.numberOfTicketsRemaining >= 1 ORDER BY DATE ASC");
+    $query = $conn->prepare("SELECT * FROM events AS e WHERE e.ticketSaleStartDate <= ? AND e.ticketSaleEndDate >= ? AND e.numberOfTicketsRemaining >= 1 ORDER BY e.date ASC");
     $query->bind_param("ss", $currentDate, $currentDate);
     $query->execute();
 
