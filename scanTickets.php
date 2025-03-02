@@ -1,15 +1,10 @@
 <?php
     require("utils/sessionCheck.php");
+    require("utils/adminCheck.php");
     require("utils/dbConnect.php");
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
-    }
-
-    // Ensuring the user is admin
-    if (!$_SESSION["isAdmin"]) {
-        header("Location: index.php");
-        exit;
     }
 
     $msg = "";

@@ -2,6 +2,7 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    
     require("settings.php");
 
     $time = $_SERVER["REQUEST_TIME"]; // Getting the current time

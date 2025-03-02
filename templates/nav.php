@@ -35,6 +35,12 @@
                 <li class="navbar-item">
                     <a href="scanTickets.php" class="nav-link text-light">Scan Tickets</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#">Manage</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="manageUsers.php">Users</a></li>
+                    </ul>
+                </li>
                 <li class="navbar-item">
                     <a href="logout.php" class="nav-link text-light">Logout</a>
                 </li>
