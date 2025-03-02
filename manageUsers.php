@@ -53,13 +53,13 @@
                                 }
                             ?></td>
                             <td>
+                                <a href="editUser.php?id=<?php echo $user['userID']; ?>" class="btn text-primary btn-link">Edit</a>
                                 <?php if ($user["userID"] != $_SESSION["userID"]): ?>
                                     <form name="deleteUser" action="deleteUser.php" method="POST">
                                         <input type="hidden" name="userID" value="<?php echo $user["userID"]; ?>">
                                         <button type="submit" class="btn btn-link text-danger p-0">Delete</button>
                                     </form>
                                 <?php endif; ?>
-                                <a href="editUser.php?id=<?php echo $user['userID']; ?>" class="btn text-primary btn-link">Edit</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>

@@ -9,8 +9,15 @@
     $msg_visibility = "hidden";
 
     if ($method == "GET") {
+
         // Getting the user id
         $userID = $_GET["id"];
+
+        // Handling errors
+        if (isset($_GET["err"])) {
+            $msg = ($_GET["err"] == 1 ? "Username already exists. Please choose a different one." : "An error occurred. Please try again later.");
+            $msg_visibility = "visible";
+        }
 
         // Fetching the user data
         $query = $conn->prepare("SELECT * FROM users AS u WHERE userID = ?");
@@ -44,13 +51,16 @@
             exit();
         } catch (mysqli_sql_exception $e) {
             if ($e->getCode() == 1062) {
-                // Handling duplicate usernames
-                $msg = "The username is a duplicate. Please choose a different one.";
-                $msg_visibility = "visible";
+                // Error code 1 shows a duplicate username
+                $errorCode = 1;
             } else {
-                $msg = "An error occurred. Please try again later.";
-                $msg_visibility = "visible";
+                // Error code 2 shows some other error
+                $errorCode = 2;
             }
+
+            // Reloading the page in GET mode to get the form data again
+            header("Location: editUser.php?id=$userID&err=$errorCode");
+            exit;
         }
     }
 ?>
@@ -92,7 +102,7 @@
             </div>
             <div class="mb-3">
                 <label for="adminStatus" class="form-check-label">Admin:</label>
-                <input type="checkbox" class="form-check-input" name="adminStatus" <?php echo($result["isAdmin"] == 1 ? "checked" : ""); ?> required>
+                <input type="checkbox" class="form-check-input" name="adminStatus" <?php echo($result["isAdmin"] == 1 ? "checked" : ""); ?>>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>

@@ -49,6 +49,7 @@
                             <td><?php echo($event["numberOfTicketsRemaining"]); ?></td>
                             <td><?php echo($event["admissionsPerTicket"]); ?></td>
                             <td>
+                                <a href="editEvent.php?id=<?php echo $event['eventID']; ?>" class="btn text-primary btn-link">Edit</a>
                                 <form name="deleteEvent" action="deleteEvent.php" method="POST">
                                     <input type="hidden" name="eventID" value="<?php echo $event["eventID"]; ?>">
                                     <button type="submit" class="btn btn-link text-danger p-0">Delete</button>
