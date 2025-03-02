@@ -58,13 +58,8 @@
                                         <input type="hidden" name="userID" value="<?php echo $user["userID"]; ?>">
                                         <button type="submit" class="btn btn-link text-danger p-0">Delete</button>
                                     </form>
-                                    <form name="toggleAdminStatus" action="toggleUserAdminStatus.php" method="POST">
-                                        <input type="hidden" name="userID" value="<?php echo $user["userID"]; ?>">
-                                        <button type="submit" class="btn btn-link text-primary p-0">Toggle Admin</button>
-                                    </form>
-                                <?php else: ?>
-                                    <p>No actions available.</p>
                                 <?php endif; ?>
+                                <a href="editUser.php?id=<?php echo $user['userID']; ?>" class="btn text-primary btn-link">Edit</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
