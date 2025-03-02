@@ -40,6 +40,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="manageUsers.php">Users</a></li>
                         <li><a class="dropdown-item" href="manageEvents.php">Events</a></li>
+                        <li><a class="dropdown-item" href="manageTickets.php">Tickets</a></li>
                     </ul>
                 </li>
                 <li class="navbar-item">

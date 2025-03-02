@@ -3,10 +3,6 @@
     require("utils/adminCheck.php");
     require("utils/dbConnect.php");
 
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
-
     // Fetching all the events from the database
     $query = "SELECT * FROM events AS e ORDER BY e.date ASC";
     $result = $conn->query($query);

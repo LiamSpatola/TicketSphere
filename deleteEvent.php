@@ -15,7 +15,7 @@
         $query->execute();
     }
 
-    // Redirecting back to manageUsers.php
+    // Redirecting back to manageEvents.php
     header("Location: manageEvents.php");
     exit;
 ?>
