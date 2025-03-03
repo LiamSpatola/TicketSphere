@@ -61,6 +61,7 @@
 
         <img src="<?php echo $barcodeURL; ?>" alt="Ticket Barcode" class="mt-3">
         <h4 class="mt-3">Show this ticket at the venue entrance.</h4>
+        <a href="myTickets.php" class="mt-3">Return</a>
     </div>
 </body>
 </html>
