@@ -8,7 +8,7 @@
     }
 
     // Fetching all the users from the database
-    $query = "SELECT * FROM users AS u ORDER BY u.lastName, u.firstName ASC";
+    $query = "SELECT * FROM users AS u ORDER BY u.lastName ASC, u.firstName ASC";
     $result = $conn->query($query);
 ?>
 

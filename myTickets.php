@@ -14,7 +14,7 @@
         FROM tickets AS t
         INNER JOIN events AS e ON t.eventID = e.eventID
         WHERE t.userID = ?
-        ORDER BY e.date ASC, t.admissionsLeft DESC");
+        ORDER BY t.admissionsLeft DESC, e.date ASC");
 
     $query->bind_param("i", $userID);
     $query->execute();
