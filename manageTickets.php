@@ -9,7 +9,7 @@
         FROM tickets AS t
         INNER JOIN events AS e ON t.eventID = e.eventID
         INNER JOIN users AS u ON t.userID = u.userID
-        ORDER BY t.purchaseDate ASC
+        ORDER BY t.purchaseDate ASC, t.admissionsLeft DESC
     ";
     $result = $conn->query($query);
 ?>
