@@ -6,7 +6,7 @@ An event ticketing system built with PHP
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
 - [Contributing](#contributing)
-- [License](#license)
+- [Licensing](#licensing)
 
 ## Features
 - User authentication
@@ -54,7 +54,7 @@ CREATE TABLE `events` (
 )
 COLLATE='utf16_general_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=4;
+AUTO_INCREMENT=1;
 ```
 
 ```sql
@@ -71,7 +71,7 @@ CREATE TABLE `users` (
 )
 COLLATE='utf16_general_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=10;
+AUTO_INCREMENT=1;
 ```
 
 ```sql
@@ -89,7 +89,7 @@ CREATE TABLE `tickets` (
 )
 COLLATE='utf16_general_ci'
 ENGINE=InnoDB
-AUTO_INCREMENT=80;
+AUTO_INCREMENT=1;
 ```
 
 3. Create a new user in your MySQL database:
@@ -137,15 +137,15 @@ touch settings.php # On windows, use 'type nul > settings.php'
 | TIMEOUT_DURATION | The amount of time, in seconds, that the user is allowed to be inactive for before being logged out. |
 | TIMEZONE | The timezone for the application. |
 
-6. Create an admin user (for the website) with this SQL command:
+6. Start your web server with PHP and create an admin user (for the website) by going to [localhost/register.php](localhost/register.php) and filling in the form. Then run the following SQL command to make the user an admin:
 ```sql
-INSERT INTO users AS u
-(u.username, u.password, u.firstName, u.lastName, u.email, u.isAdmin)
-VALUES ('admin', 'admin', 'Admin', 'User', 'admin@admin.com', 1);
+UPDATE users
+SET isAdmin = 1
+WHERE username = 'admin';
 ```
-**Ensure you set `isAdmin` to 1 to make the user an admin user. Setting it to anything else will make the user a regular user.**
+**Make sure you replace the username with the username you set up.**
 
-7. Start your web server with PHP and navigate to [localhost/login.php](localhost/login.php). Login using the user created in step 6. You can now use the website and create events. Register as a regular user to purchase tickets by heading to [localhost/register.php](localhost/register.php).
+7. Navigate to [localhost/login.php](localhost/login.php). Login using the user created in step 6. You can now use the website and create events. Register as a regular user to purchase tickets by heading to [localhost/register.php](localhost/register.php).
 
 ## Contributing
 Please feel free to contribute to this repository.
